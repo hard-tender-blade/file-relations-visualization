@@ -1,0 +1,599 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "Lifecycle",
+      "children": [
+        {
+          "name": "Drug & Device Development",
+          "children": [
+            {
+              "name": "Stability Program Management",
+              "children": []
+            },
+            {
+              "name": "Device Design Controls",
+              "children": []
+            },
+            {
+              "name": "Product Lifecycle Management",
+              "children": []
+            },
+            {
+              "name": "Process Lifecycle Management",
+              "children": []
+            },
+            {
+              "name": "Drug Product / Substance Development",
+              "children": []
+            },
+            {
+              "name": "Analytical Method Development",
+              "children": []
+            },
+            {
+              "name": "Device Master Record / Design History File",
+              "children": []
+            },
+            {
+              "name": "Tech Transfer & Scale-up",
+              "children": []
+            },
+            {
+              "name": "Packaging Development",
+              "children": []
+            },
+            {
+              "name": "Manufacturing Process Development",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Clinical Programs",
+          "children": [
+            {
+              "name": "Informed Consent Form",
+              "children": []
+            },
+            {
+              "name": "Study & Site Management",
+              "children": []
+            },
+            {
+              "name": "Database & Biostatistics",
+              "children": []
+            },
+            {
+              "name": "Clinical Program Strategy",
+              "children": []
+            },
+            {
+              "name": "Clinical Trial Transparency",
+              "children": []
+            },
+            {
+              "name": "Biospecimen and Imaging Management",
+              "children": []
+            },
+            {
+              "name": "Data Acquisition & Data Quality",
+              "children": []
+            },
+            {
+              "name": "Clinical Trials Materials / IMP",
+              "children": []
+            },
+            {
+              "name": "Medical Monitoring",
+              "children": []
+            },
+            {
+              "name": "Investigator Brochure (IB)",
+              "children": []
+            },
+            {
+              "name": "Clinical Protocol",
+              "children": []
+            },
+            {
+              "name": "eTMF Management",
+              "children": []
+            },
+            {
+              "name": "Clinical Study Report",
+              "children": []
+            },
+            {
+              "name": "Investigator Sponsored Research",
+              "children": []
+            },
+            {
+              "name": "Medical Affairs Programs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Regulatory Management",
+          "children": [
+            {
+              "name": "Labeling",
+              "children": []
+            },
+            {
+              "name": "Regulatory Strategy",
+              "children": []
+            },
+            {
+              "name": "Regulatory Submissions",
+              "children": []
+            },
+            {
+              "name": "Health Authority Interactions",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Non-Clinical Programs",
+          "children": [
+            {
+              "name": "Drug Metabolism & Pharmacokinetics",
+              "children": []
+            },
+            {
+              "name": "Animal Welfare & Husbandry",
+              "children": []
+            },
+            {
+              "name": "Non-Clinical Study Management",
+              "children": []
+            },
+            {
+              "name": "Biomarkers & Translational Medicine",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Patient Safety",
+          "children": [
+            {
+              "name": "Safety Signals Detection and Management",
+              "children": []
+            },
+            {
+              "name": "PV System Master File",
+              "children": []
+            },
+            {
+              "name": "Safety Risk Management Plan",
+              "children": []
+            },
+            {
+              "name": "Patient Support Programs",
+              "children": []
+            },
+            {
+              "name": "Periodic & Aggregate Reporting",
+              "children": []
+            },
+            {
+              "name": "Individual Case Safety Reporting",
+              "children": []
+            },
+            {
+              "name": "Post Approval Safety Studies",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GxP",
+      "children": [
+        {
+          "name": "Quality Risk Management",
+          "children": [
+            {
+              "name": "Product and Process Risk Management",
+              "children": []
+            },
+            {
+              "name": "Trending and Analysis",
+              "children": []
+            },
+            {
+              "name": "URRA / PFMEA / DFMEA",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Product Quality Management",
+          "children": [
+            {
+              "name": "Product Complaint Handling",
+              "children": []
+            },
+            {
+              "name": "\"Recalls",
+              "children": []
+            },
+            {
+              "name": "SAE and MDR Reporting",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Deviation & Change Management",
+          "children": [
+            {
+              "name": "CAPA Management",
+              "children": []
+            },
+            {
+              "name": "Change Control",
+              "children": []
+            },
+            {
+              "name": "Non-conformance Management",
+              "children": []
+            },
+            {
+              "name": "Management Notification",
+              "children": []
+            },
+            {
+              "name": "Lab OOS/OOT Management",
+              "children": []
+            },
+            {
+              "name": "Serious Breach Management",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Document & Training Management",
+          "children": [
+            {
+              "name": "Personnel & Training Management",
+              "children": []
+            },
+            {
+              "name": "Document Management",
+              "children": []
+            },
+            {
+              "name": "Records Management",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Quality Governance",
+          "children": [
+            {
+              "name": "Audits and Inspection Management",
+              "children": []
+            },
+            {
+              "name": "Regulatory Surveillance",
+              "children": []
+            },
+            {
+              "name": "Annual Product Quality Reviews",
+              "children": []
+            },
+            {
+              "name": "Management Reviews",
+              "children": []
+            },
+            {
+              "name": "Data Integrity",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Operational",
+      "children": [
+        {
+          "name": "Production & Disposition",
+          "children": [
+            {
+              "name": "Manufacturing Controls",
+              "children": []
+            },
+            {
+              "name": "Packaging Controls",
+              "children": []
+            },
+            {
+              "name": "Product Disposition",
+              "children": []
+            },
+            {
+              "name": "Identification and Traceability",
+              "children": []
+            },
+            {
+              "name": "Laboratory Controls",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Supplier Management",
+          "children": [
+            {
+              "name": "Supplier Qualification and Management",
+              "children": []
+            },
+            {
+              "name": "Incoming Inspection Controls",
+              "children": []
+            },
+            {
+              "name": "Partner Technical Management",
+              "children": []
+            },
+            {
+              "name": "Alliance Management",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Facility Management",
+          "children": [
+            {
+              "name": "Facility & Equipment Lifecycle Management",
+              "children": []
+            },
+            {
+              "name": "Equipment Calibration",
+              "children": []
+            },
+            {
+              "name": "Facilities Maintenance",
+              "children": []
+            },
+            {
+              "name": "Facility Design",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Warehousing & Distribution",
+          "children": [
+            {
+              "name": "Distribution management",
+              "children": []
+            },
+            {
+              "name": "Warehouse management",
+              "children": []
+            },
+            {
+              "name": "Installation and Service",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Qualification & Validation",
+          "children": [
+            {
+              "name": "Equipment Qualification",
+              "children": []
+            },
+            {
+              "name": "Analytical Method Qualification",
+              "children": []
+            },
+            {
+              "name": "Facility Qualification",
+              "children": []
+            },
+            {
+              "name": "Process Qualification",
+              "children": []
+            },
+            {
+              "name": "Electronic Systems Qualification",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Commercial and Business Development",
+      "children": [
+        {
+          "name": "External Relationship Management",
+          "children": [
+            {
+              "name": "Customer Management (Private)",
+              "children": []
+            },
+            {
+              "name": "Distribution Channel Management",
+              "children": []
+            },
+            {
+              "name": "Charitable Donations",
+              "children": []
+            },
+            {
+              "name": "External Expensing and Payments",
+              "children": []
+            },
+            {
+              "name": "Customer Management (Government)",
+              "children": []
+            },
+            {
+              "name": "Seller Interactions",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "\"Asset",
+          "children": [
+            {
+              "name": " Marketing and Promotion Management\"",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Internal Amgen Guidance",
+          "children": [
+            {
+              "name": "Business Continuity",
+              "children": []
+            },
+            {
+              "name": "Social Media",
+              "children": []
+            },
+            {
+              "name": "Employee Support Programs",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Business Compliance and Legal",
+      "children": [
+        {
+          "name": "Patient Safety and Ethics",
+          "children": [
+            {
+              "name": "Healthcare/Medical Safety Compliance",
+              "children": []
+            },
+            {
+              "name": "Sampling Compliance",
+              "children": []
+            },
+            {
+              "name": "Ethics and Corporate Behavior",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Financial Requirements",
+          "children": [
+            {
+              "name": "Import/Export",
+              "children": []
+            },
+            {
+              "name": "Tax Records and Accounting",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Data Protection and Records",
+          "children": [
+            {
+              "name": "Data Privacy",
+              "children": []
+            },
+            {
+              "name": "Data Protection",
+              "children": []
+            },
+            {
+              "name": "Compliance Data Recording",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IT Supporting Business Functions",
+      "children": [
+        {
+          "name": "Enterprise Support",
+          "children": [
+            {
+              "name": "SAP",
+              "children": []
+            },
+            {
+              "name": "Strategy and Resource Planning",
+              "children": []
+            },
+            {
+              "name": "Personnel",
+              "children": []
+            },
+            {
+              "name": "Commercial Support",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Manufacturing",
+          "children": [
+            {
+              "name": "Facility Mangement",
+              "children": []
+            },
+            {
+              "name": "Equipment",
+              "children": []
+            },
+            {
+              "name": "Production",
+              "children": []
+            },
+            {
+              "name": "Facility Management",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "R&D",
+          "children": [
+            {
+              "name": "Non-Clinical",
+              "children": []
+            },
+            {
+              "name": "Quality",
+              "children": []
+            },
+            {
+              "name": "Clinical",
+              "children": []
+            },
+            {
+              "name": "Safety",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
