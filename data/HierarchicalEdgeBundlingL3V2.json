@@ -1,0 +1,708 @@
+[
+  {
+    "name": "root.Lifecycle.Drug & Device Development.Stability Program Management",
+    "L0": "Lifecycle",
+    "L1": "Drug & Device Development",
+    "L2": "Stability Program Management",
+    "size": 17,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Analytical Method Development",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.Lifecycle.Drug & Device Development.Drug Product / Substance Development",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Clinical Programs.Clinical Program Strategy",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Facility Management.Facilities Maintenance",
+      "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Lifecycle.Clinical Programs.Informed Consent Form",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Lifecycle.Non-Clinical Programs.Drug Metabolism & Pharmacokinetics",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.Lifecycle.Clinical Programs.Study & Site Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE", "GDE->MET"]
+  },
+  {
+    "name": "root.GxP.Quality Risk Management.Product and Process Risk Management",
+    "L0": "GxP",
+    "L1": "Quality Risk Management",
+    "L2": "Product and Process Risk Management",
+    "size": 1,
+    "linkTo": ["root.Lifecycle.Clinical Programs.Clinical Program Strategy"],
+    "relations": ["GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Production & Disposition.Manufacturing Controls",
+    "L0": "Operational",
+    "L1": "Production & Disposition",
+    "L2": "Manufacturing Controls",
+    "size": 4,
+    "linkTo": [
+      "root.GxP.Product Quality Management.Product Complaint Handling",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Drug & Device Development.Stability Program Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Production & Disposition.Packaging Controls",
+    "L0": "Operational",
+    "L1": "Production & Disposition",
+    "L2": "Packaging Controls",
+    "size": 5,
+    "linkTo": [
+      "root.GxP.Product Quality Management.Product Complaint Handling",
+      "root.Operational.Facility Management.Facilities Maintenance",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.GxP.Document & Training Management.Personnel & Training Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.Lifecycle.Clinical Programs.Informed Consent Form",
+    "L0": "Lifecycle",
+    "L1": "Clinical Programs",
+    "L2": "Informed Consent Form",
+    "size": 6,
+    "linkTo": [
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.GxP.Deviation & Change Management.Non-conformance Management",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.GxP.Document & Training Management.Document Management"
+    ],
+    "relations": ["GDE->STND", "GDE->SOP"]
+  },
+  {
+    "name": "root.GxP.Product Quality Management.Product Complaint Handling",
+    "L0": "GxP",
+    "L1": "Product Quality Management",
+    "L2": "Product Complaint Handling",
+    "size": 6,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.GxP.Deviation & Change Management.CAPA Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->STND", "GDE->MET"]
+  },
+  {
+    "name": "root.GxP.Deviation & Change Management.CAPA Management",
+    "L0": "GxP",
+    "L1": "Deviation & Change Management",
+    "L2": "CAPA Management",
+    "size": 6,
+    "linkTo": [
+      "root.Operational.Supplier Management.Supplier Qualification and Management",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Warehousing & Distribution.Installation and Service",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Operational.Warehousing & Distribution.Distribution management"
+    ],
+    "relations": ["GDE->POL", "GDE->STND", "GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Supplier Management.Supplier Qualification and Management",
+    "L0": "Operational",
+    "L1": "Supplier Management",
+    "L2": "Supplier Qualification and Management",
+    "size": 11,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Identification and Traceability",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Qualification & Validation.Analytical Method Qualification",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.GxP.Quality Governance.Audits and Inspection Management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.GxP.Document & Training Management.Personnel & Training Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Supplier Management.Incoming Inspection Controls",
+    "L0": "Operational",
+    "L1": "Supplier Management",
+    "L2": "Incoming Inspection Controls",
+    "size": 3,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.Operational.Warehousing & Distribution.Distribution management"
+    ],
+    "relations": ["GDE->STND", "GDE->MET", "GDE->SOP"]
+  },
+  {
+    "name": "root.GxP.Document & Training Management.Personnel & Training Management",
+    "L0": "GxP",
+    "L1": "Document & Training Management",
+    "L2": "Personnel & Training Management",
+    "size": 9,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Facility Management.Facility & Equipment Lifecycle Management",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Supplier Management.Supplier Qualification and Management",
+      "root.Operational.Production & Disposition.Product Disposition"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.GxP.Deviation & Change Management.Change Control",
+    "L0": "GxP",
+    "L1": "Deviation & Change Management",
+    "L2": "Change Control",
+    "size": 18,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Lifecycle.Regulatory Management.Regulatory Submissions",
+      "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Lifecycle.Drug & Device Development.Analytical Method Development",
+      "root.Lifecycle.Clinical Programs.Clinical Program Strategy",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Supplier Management.Supplier Qualification and Management",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Lifecycle.Drug & Device Development.Product Lifecycle Management",
+      "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Lifecycle.Clinical Programs.Informed Consent Form",
+      "root.GxP.Document & Training Management.Document Management"
+    ],
+    "relations": ["GDE->GDE", "GDE->SOP", "GDE->MET", "GDE->STND"]
+  },
+  {
+    "name": "root.GxP.Quality Governance.Audits and Inspection Management",
+    "L0": "GxP",
+    "L1": "Quality Governance",
+    "L2": "Audits and Inspection Management",
+    "size": 6,
+    "linkTo": [
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Lifecycle.Clinical Programs.Informed Consent Form",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.GxP.Quality Risk Management.Product and Process Risk Management",
+      "root.GxP.Deviation & Change Management.Non-conformance Management"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Regulatory Management.Labeling",
+    "L0": "Lifecycle",
+    "L1": "Regulatory Management",
+    "L2": "Labeling",
+    "size": 9,
+    "linkTo": [
+      "root.GxP.Document & Training Management.Document Management",
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.Lifecycle.Clinical Programs.Clinical Program Strategy",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Production & Disposition.Identification and Traceability"
+    ],
+    "relations": ["GDE->GDE", "GDE->SOP"]
+  },
+  {
+    "name": "root.GxP.Document & Training Management.Document Management",
+    "L0": "GxP",
+    "L1": "Document & Training Management",
+    "L2": "Document Management",
+    "size": 7,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Drug & Device Development.Drug Product / Substance Development",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Operational.Qualification & Validation.Analytical Method Qualification",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls"
+    ],
+    "relations": ["GDE->GDE", "GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Drug & Device Development.Device Design Controls",
+    "L0": "Lifecycle",
+    "L1": "Drug & Device Development",
+    "L2": "Device Design Controls",
+    "size": 6,
+    "linkTo": [
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.GxP.Document & Training Management.Document Management"
+    ],
+    "relations": ["GDE->GDE", "GDE->SOP"]
+  },
+  {
+    "name": "root.Operational.Facility Management.Facility & Equipment Lifecycle Management",
+    "L0": "Operational",
+    "L1": "Facility Management",
+    "L2": "Facility & Equipment Lifecycle Management",
+    "size": 1,
+    "linkTo": ["root.GxP.Document & Training Management.Document Management"],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Operational.Warehousing & Distribution.Distribution management",
+    "L0": "Operational",
+    "L1": "Warehousing & Distribution",
+    "L2": "Distribution management",
+    "size": 13,
+    "linkTo": [
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.GxP.Product Quality Management.Product Complaint Handling",
+      "root.Operational.Production & Disposition.Identification and Traceability",
+      "root.Operational.Supplier Management.Supplier Qualification and Management",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Lifecycle.Drug & Device Development.Product Lifecycle Management",
+      "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+      "root.GxP.Quality Governance.Audits and Inspection Management",
+      "root.GxP.Quality Risk Management.Product and Process Risk Management",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Production & Disposition.Packaging Controls"
+    ],
+    "relations": ["GDE->SOP", "GDE->MET", "GDE->GDE", "GDE->STND"]
+  },
+  {
+    "name": "root.Operational.Production & Disposition.Product Disposition",
+    "L0": "Operational",
+    "L1": "Production & Disposition",
+    "L2": "Product Disposition",
+    "size": 13,
+    "linkTo": [
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.GxP.Deviation & Change Management.Management Notification",
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.Operational.Facility Management.Facilities Maintenance",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.GxP.Quality Governance.Audits and Inspection Management",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Operational.Facility Management.Facility & Equipment Lifecycle Management",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Operational.Production & Disposition.Laboratory Controls"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE", "GDE->MET"]
+  },
+  {
+    "name": "root.Operational.Qualification & Validation.Equipment Qualification",
+    "L0": "Operational",
+    "L1": "Qualification & Validation",
+    "L2": "Equipment Qualification",
+    "size": 20,
+    "linkTo": [
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.GxP.Deviation & Change Management.Non-conformance Management",
+      "root.Operational.Supplier Management.Supplier Qualification and Management",
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Operational.Qualification & Validation.Analytical Method Qualification",
+      "root.Lifecycle.Drug & Device Development.Analytical Method Development",
+      "root.Lifecycle.Drug & Device Development.Drug Product / Substance Development",
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.Lifecycle.Drug & Device Development.Process Lifecycle Management",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Operational.Production & Disposition.Identification and Traceability",
+      "root.Lifecycle.Drug & Device Development.Product Lifecycle Management"
+    ],
+    "relations": ["GDE->STND", "GDE->SOP", "GDE->MET", "GDE->WI", "GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Facility Management.Equipment Calibration",
+    "L0": "Operational",
+    "L1": "Facility Management",
+    "L2": "Equipment Calibration",
+    "size": 2,
+    "linkTo": [
+      "root.GxP.Quality Risk Management.Product and Process Risk Management",
+      "root.GxP.Document & Training Management.Document Management"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.GxP.Deviation & Change Management.Non-conformance Management",
+    "L0": "GxP",
+    "L1": "Deviation & Change Management",
+    "L2": "Non-conformance Management",
+    "size": 7,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Lifecycle.Drug & Device Development.Stability Program Management"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Operational.Production & Disposition.Identification and Traceability",
+    "L0": "Operational",
+    "L1": "Production & Disposition",
+    "L2": "Identification and Traceability",
+    "size": 5,
+    "linkTo": [
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.Operational.Warehousing & Distribution.Warehouse management",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Operational.Facility Management.Equipment Calibration"
+    ],
+    "relations": ["GDE->SOP", "GDE->WI"]
+  },
+  {
+    "name": "root.Operational.Warehousing & Distribution.Warehouse management",
+    "L0": "Operational",
+    "L1": "Warehousing & Distribution",
+    "L2": "Warehouse management",
+    "size": 2,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Identification and Traceability",
+      "root.Operational.Warehousing & Distribution.Distribution management"
+    ],
+    "relations": ["GDE->GDE", "GDE->SOP"]
+  },
+  {
+    "name": "root.GxP.Deviation & Change Management.Management Notification",
+    "L0": "GxP",
+    "L1": "Deviation & Change Management",
+    "L2": "Management Notification",
+    "size": 4,
+    "linkTo": [
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Drug & Device Development.Process Lifecycle Management",
+      "root.Lifecycle.Regulatory Management.Regulatory Submissions"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.Lifecycle.Drug & Device Development.Product Lifecycle Management",
+    "L0": "Lifecycle",
+    "L1": "Drug & Device Development",
+    "L2": "Product Lifecycle Management",
+    "size": 13,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Supplier Management.Supplier Qualification and Management",
+      "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+      "root.Lifecycle.Clinical Programs.Clinical Program Strategy",
+      "root.Lifecycle.Regulatory Management.Regulatory Submissions",
+      "root.Operational.Production & Disposition.Identification and Traceability",
+      "root.GxP.Product Quality Management.Product Complaint Handling",
+      "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+      "root.Operational.Supplier Management.Alliance Management",
+      "root.Operational.Production & Disposition.Packaging Controls"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE", "GDE->STND", "GDE->WI"]
+  },
+  {
+    "name": "root.GxP.Quality Governance.Regulatory Surveillance",
+    "L0": "GxP",
+    "L1": "Quality Governance",
+    "L2": "Regulatory Surveillance",
+    "size": 1,
+    "linkTo": ["root.Operational.Facility Management.Equipment Calibration"],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Clinical Programs.Study & Site Management",
+    "L0": "Lifecycle",
+    "L1": "Clinical Programs",
+    "L2": "Study & Site Management",
+    "size": 7,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+      "root.Lifecycle.Regulatory Management.Regulatory Submissions",
+      "root.GxP.Product Quality Management.Product Complaint Handling"
+    ],
+    "relations": ["GDE->SOP", "GDE->WI", "GDE->GDE"]
+  },
+  {
+    "name": "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+    "L0": "Lifecycle",
+    "L1": "Clinical Programs",
+    "L2": "Database & Biostatistics",
+    "size": 1,
+    "linkTo": ["root.Operational.Production & Disposition.Product Disposition"],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Operational.Qualification & Validation.Analytical Method Qualification",
+    "L0": "Operational",
+    "L1": "Qualification & Validation",
+    "L2": "Analytical Method Qualification",
+    "size": 15,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Lifecycle.Drug & Device Development.Drug Product / Substance Development",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Lifecycle.Drug & Device Development.Analytical Method Development",
+      "root.Lifecycle.Non-Clinical Programs.Drug Metabolism & Pharmacokinetics",
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.GxP.Quality Governance.Regulatory Surveillance",
+      "root.Lifecycle.Drug & Device Development.Product Lifecycle Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->MET", "GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Warehousing & Distribution.Installation and Service",
+    "L0": "Operational",
+    "L1": "Warehousing & Distribution",
+    "L2": "Installation and Service",
+    "size": 3,
+    "linkTo": [
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Production & Disposition.Packaging Controls"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Non-Clinical Programs.Drug Metabolism & Pharmacokinetics",
+    "L0": "Lifecycle",
+    "L1": "Non-Clinical Programs",
+    "L2": "Drug Metabolism & Pharmacokinetics",
+    "size": 2,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.Lifecycle.Clinical Programs.Clinical Program Strategy"
+    ],
+    "relations": ["GDE->GDE"]
+  },
+  {
+    "name": "root.Operational.Production & Disposition.Laboratory Controls",
+    "L0": "Operational",
+    "L1": "Production & Disposition",
+    "L2": "Laboratory Controls",
+    "size": 20,
+    "linkTo": [
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.Operational.Qualification & Validation.Analytical Method Qualification",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Operational.Warehousing & Distribution.Warehouse management",
+      "root.Lifecycle.Drug & Device Development.Analytical Method Development",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Production & Disposition.Identification and Traceability",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.GxP.Quality Governance.Regulatory Surveillance",
+      "root.Lifecycle.Clinical Programs.Clinical Program Strategy",
+      "root.Lifecycle.Drug & Device Development.Product Lifecycle Management",
+      "root.Lifecycle.Clinical Programs.Database & Biostatistics",
+      "root.Lifecycle.Drug & Device Development.Drug Product / Substance Development",
+      "root.Operational.Supplier Management.Alliance Management"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE", "GDE->MET"]
+  },
+  {
+    "name": "root.GxP.Quality Governance.Annual Product Quality Reviews",
+    "L0": "GxP",
+    "L1": "Quality Governance",
+    "L2": "Annual Product Quality Reviews",
+    "size": 1,
+    "linkTo": [
+      "root.Operational.Qualification & Validation.Equipment Qualification"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Operational.Supplier Management.Partner Technical Management",
+    "L0": "Operational",
+    "L1": "Supplier Management",
+    "L2": "Partner Technical Management",
+    "size": 1,
+    "linkTo": ["root.Operational.Production & Disposition.Product Disposition"],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Regulatory Management.Regulatory Strategy",
+    "L0": "Lifecycle",
+    "L1": "Regulatory Management",
+    "L2": "Regulatory Strategy",
+    "size": 13,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.GxP.Quality Risk Management.Product and Process Risk Management",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.GxP.Product Quality Management.Product Complaint Handling",
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.Operational.Facility Management.Facility & Equipment Lifecycle Management",
+      "root.Operational.Qualification & Validation.Analytical Method Qualification",
+      "root.Operational.Warehousing & Distribution.Warehouse management",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Facility Management.Facilities Maintenance"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Drug & Device Development.Process Lifecycle Management",
+    "L0": "Lifecycle",
+    "L1": "Drug & Device Development",
+    "L2": "Process Lifecycle Management",
+    "size": 3,
+    "linkTo": [
+      "root.Lifecycle.Regulatory Management.Regulatory Submissions",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Drug & Device Development.Device Design Controls"
+    ],
+    "relations": ["GDE->SOP", "GDE->GDE"]
+  },
+  {
+    "name": "root.Lifecycle.Clinical Programs.Clinical Program Strategy",
+    "L0": "Lifecycle",
+    "L1": "Clinical Programs",
+    "L2": "Clinical Program Strategy",
+    "size": 9,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.GxP.Document & Training Management.Personnel & Training Management",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.GxP.Document & Training Management.Document Management",
+      "root.GxP.Deviation & Change Management.Change Control",
+      "root.GxP.Quality Governance.Annual Product Quality Reviews"
+    ],
+    "relations": ["GDE->GDE", "GDE->SOP", "GDE->MET", "GDE->STND"]
+  },
+  {
+    "name": "root.Operational.Facility Management.Facilities Maintenance",
+    "L0": "Operational",
+    "L1": "Facility Management",
+    "L2": "Facilities Maintenance",
+    "size": 12,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Drug & Device Development.Product Lifecycle Management",
+      "root.Lifecycle.Regulatory Management.Labeling",
+      "root.Operational.Production & Disposition.Manufacturing Controls",
+      "root.GxP.Product Quality Management.Product Complaint Handling",
+      "root.Operational.Warehousing & Distribution.Installation and Service",
+      "root.Operational.Warehousing & Distribution.Warehouse management",
+      "root.Operational.Facility Management.Equipment Calibration",
+      "root.Operational.Facility Management.Facility & Equipment Lifecycle Management"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Regulatory Management.Regulatory Submissions",
+    "L0": "Lifecycle",
+    "L1": "Regulatory Management",
+    "L2": "Regulatory Submissions",
+    "size": 2,
+    "linkTo": [
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.Lifecycle.Drug & Device Development.Process Lifecycle Management"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Operational.Supplier Management.Alliance Management",
+    "L0": "Operational",
+    "L1": "Supplier Management",
+    "L2": "Alliance Management",
+    "size": 1,
+    "linkTo": [
+      "root.Operational.Warehousing & Distribution.Installation and Service"
+    ],
+    "relations": ["GDE->SOP"]
+  },
+  {
+    "name": "root.Lifecycle.Drug & Device Development.Drug Product / Substance Development",
+    "L0": "Lifecycle",
+    "L1": "Drug & Device Development",
+    "L2": "Drug Product / Substance Development",
+    "size": 3,
+    "linkTo": [
+      "root.Lifecycle.Drug & Device Development.Stability Program Management",
+      "root.Operational.Qualification & Validation.Analytical Method Qualification",
+      "root.Operational.Qualification & Validation.Equipment Qualification"
+    ],
+    "relations": ["GDE->GDE"]
+  },
+  {
+    "name": "root.Lifecycle.Drug & Device Development.Analytical Method Development",
+    "L0": "Lifecycle",
+    "L1": "Drug & Device Development",
+    "L2": "Analytical Method Development",
+    "size": 8,
+    "linkTo": [
+      "root.GxP.Deviation & Change Management.CAPA Management",
+      "root.Operational.Production & Disposition.Packaging Controls",
+      "root.Operational.Warehousing & Distribution.Distribution management",
+      "root.Operational.Production & Disposition.Product Disposition",
+      "root.Operational.Qualification & Validation.Equipment Qualification",
+      "root.Operational.Production & Disposition.Laboratory Controls",
+      "root.GxP.Quality Governance.Annual Product Quality Reviews",
+      "root.Operational.Production & Disposition.Manufacturing Controls"
+    ],
+    "relations": ["GDE->SOP"]
+  }
+]

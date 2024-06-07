@@ -1,16 +1,70 @@
 //@ts-nocheck
 import * as d3 from "d3";
 import React, { useEffect, useState, useRef } from "react";
-
-import myData from "@/data/HierarchicalEdgeBundlingL3.json";
+import myData from "@/data/HierarchicalEdgeBundlingL3V2.json";
 
 const colornone = "#ccc";
 const colorout = "#f00";
 const colorin = "#00f";
 
-const data = hierarchy(myData);
+function buildHierarchy(data, delimiter = ".") {
+  let root = {
+    name: "root",
+    children: [],
+  };
 
-const chart = () => {
+  for (const record of data) {
+    const { name, size, linkTo } = record;
+    const parts = name.split(delimiter);
+    const l0 = parts[1];
+    const l1 = parts[2];
+    const l2 = parts[3];
+
+    //try to add l0
+    let level0 = root.children.find((c) => c.name === l0);
+    if (!level0) {
+      const newItem = {
+        name: l0,
+        children: [],
+      };
+      root.children.push(newItem);
+    }
+
+    //try to add l1
+    let level1 = root.children
+      .find((c) => c.name === l0)
+      .children.find((c) => c.name === l1);
+    if (!level1) {
+      const newItem = {
+        name: l1,
+        children: [],
+      };
+      root.children.find((c) => c.name === l0).children.push(newItem);
+    }
+
+    //try to add l2
+    let level2 = root.children
+      .find((c) => c.name === l0)
+      .children.find((c) => c.name === l1)
+      .children.find((c) => c.name === l2);
+    if (!level2) {
+      const newItem = {
+        name: l2,
+        size,
+        linkTo,
+      };
+      root.children
+        .find((c) => c.name === l0)
+        .children.find((c) => c.name === l1)
+        .children.push(newItem);
+    }
+  }
+  return root;
+}
+
+const chart = (inputData: any) => {
+  const data = buildHierarchy(inputData);
+
   const width = 1700;
   const radius = width / 2;
 
@@ -119,25 +173,6 @@ ${d.incoming.length} incoming`
   return svg.node();
 };
 
-function hierarchy(data, delimiter = ".") {
-  let root;
-  const map = new Map();
-  data.forEach(function find(data) {
-    const { name } = data;
-    if (map.has(name)) return map.get(name);
-    const i = name.lastIndexOf(delimiter);
-    map.set(name, data);
-    if (i >= 0) {
-      find({ name: name.substring(0, i), children: [] }).children.push(data);
-      data.name = name.substring(i + 1);
-    } else {
-      root = data;
-    }
-    return data;
-  });
-  return root;
-}
-
 function bilink(root) {
   const map = new Map(root.leaves().map((d) => [id(d), d]));
   for (const d of root.leaves())
@@ -154,13 +189,261 @@ function id(node) {
 export default function HierarchicalEdgeBundlingL3() {
   const holderRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const svg = chart();
-    const holder = holderRef.current;
-    if (!holder || holder.hasChildNodes() || !svg) return;
+  const [data, setData] = useState(myData);
 
-    holder.appendChild(svg);
+  const [listL0, setListL0] = useState<{ value: string; selected: boolean }[]>(
+    []
+  );
+  const [listL1, setListL1] = useState<{ value: string; selected: boolean }[]>(
+    []
+  );
+  const [listL2, setListL2] = useState<{ value: string; selected: boolean }[]>(
+    []
+  );
+  const [maxNodeSize, setMaxNodeSize] = useState(0);
+  const [currentMaxNodeSize, setCurrentMaxNodeSize] = useState(0);
+  const [currentMinNodeSize, setCurrentMinNodeSize] = useState(0);
+
+  const [relations, setRelations] = useState<{
+    value: string;
+    selected: boolean;
+  }>([]);
+
+  //collect filter data
+  useEffect(() => {
+    const l0 = data.map((d) => d.L0);
+    const l1 = data.map((d) => d.L1);
+    const l2 = data.map((d) => d.L2);
+
+    const listL0 = Array.from(new Set(l0)).map((value) => ({
+      value,
+      selected: true,
+    }));
+    const listL1 = Array.from(new Set(l1)).map((value) => ({
+      value,
+      selected: true,
+    }));
+    const listL2 = Array.from(new Set(l2)).map((value) => ({
+      value,
+      selected: true,
+    }));
+
+    setListL0(listL0);
+    setListL1(listL1);
+    setListL2(listL2);
+
+    //get max node size
+    const maxNodeSize = Math.max(...data.map((d) => d.size));
+    setMaxNodeSize(maxNodeSize);
+    setCurrentMaxNodeSize(maxNodeSize);
+
+    //get unique relations
+    const relations = [];
+
+    data.forEach((d) => {
+      d.relations.forEach((relation) => {
+        if (!relations.find((r) => r.value === relation)) {
+          relations.push({ value: relation, selected: true });
+        }
+      });
+    });
+
+    setRelations(relations);
   }, []);
 
-  return <div ref={holderRef}></div>;
+  //apply filter
+  useEffect(() => {
+    console.log("apply filter");
+    if (listL0.length === 0) return;
+
+    const newData = [];
+
+    //extract selected L0 categories
+    const selectedCategoriesL0 = listL0
+      .filter((l0) => l0.selected)
+      .map((l0) => l0.value);
+
+    const selectedCategoriesL1 = listL1
+      .filter((l1) => l1.selected)
+      .map((l1) => l1.value);
+
+    const selectedCategoriesL2 = listL2
+      .filter((l2) => l2.selected)
+      .map((l2) => l2.value);
+
+    const selectedRelations = relations
+      .filter((relation) => relation.selected)
+      .map((relation) => relation.value);
+
+    //remove unselected categories
+    myData.forEach((d) => {
+      if (
+        selectedCategoriesL0.includes(d.L0) &&
+        selectedCategoriesL1.includes(d.L1) &&
+        selectedCategoriesL2.includes(d.L2) &&
+        d.size <= currentMaxNodeSize &&
+        d.size >= currentMinNodeSize &&
+        d.relations.some((relation) => selectedRelations.includes(relation))
+      ) {
+        newData.push(d);
+      }
+    });
+
+    //remove links to not to show nodes
+    newData.forEach((element) => {
+      element.linkTo = element.linkTo.filter((link) =>
+        newData.find((d) => d.name === link)
+      );
+    });
+
+    setData(newData);
+  }, [
+    listL0,
+    listL1,
+    listL2,
+    currentMaxNodeSize,
+    currentMinNodeSize,
+    relations,
+  ]);
+
+  //render chart
+  useEffect(() => {
+    console.log("try render chart");
+    const holder = holderRef.current;
+    if (data.length === 0) {
+      holder.innerHTML = "";
+      return;
+    }
+
+    console.log("render chart");
+    const svg = chart(data);
+
+    //remove old svg
+    holder.innerHTML = "";
+    holder.appendChild(svg);
+  }, [data]);
+
+  const [filterType, setFilterType] = useState(0);
+
+  return (
+    <div className="flex items-start">
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
+          <div className="flex items-center mb-4">
+            <button
+              className={`mr-2 px-4 py-2 ${
+                filterType === 0
+                  ? "bg-blue-500 text-white rounded"
+                  : "bg-gray-300 text-gray-700 rounded"
+              }`}
+              onClick={() => setFilterType(0)}
+            >
+              L0
+            </button>
+            <button
+              className={`mr-2 px-4 py-2 ${
+                filterType === 1
+                  ? "bg-blue-500 text-white rounded"
+                  : "bg-gray-300 text-gray-700 rounded"
+              }`}
+              onClick={() => setFilterType(1)}
+            >
+              L1
+            </button>
+            <button
+              className={`mr-2 px-4 py-2 ${
+                filterType === 2
+                  ? "bg-blue-500 text-white rounded"
+                  : "bg-gray-300 text-gray-700 rounded"
+              }`}
+              onClick={() => setFilterType(2)}
+            >
+              L2
+            </button>
+          </div>
+          <div>
+            {filterType === 0 && filterList(listL0, setListL0)}
+            {filterType === 1 && filterList(listL1, setListL1)}
+            {filterType === 2 && filterList(listL2, setListL2)}
+          </div>
+        </div>
+
+        <div>
+          <p>Max Node Size: {currentMaxNodeSize}</p>
+
+          <input
+            className="w-full"
+            type="range"
+            min="0"
+            max={maxNodeSize}
+            value={currentMaxNodeSize}
+            onChange={(e) => setCurrentMaxNodeSize(e.target.value)}
+          />
+
+          <p>Min Node Size: {currentMinNodeSize}</p>
+
+          <input
+            className="w-full"
+            type="range"
+            min="0"
+            max={maxNodeSize}
+            value={currentMinNodeSize}
+            onChange={(e) => setCurrentMinNodeSize(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <p>Relations</p>
+          <div className="flex flex-col gap-1">
+            {relations.map((relation, index) => (
+              <div
+                key={index}
+                className="flex items-center select-none hover:bg-gray-100 px-2 py-1 rounded hover:cursor-pointer "
+                onClick={() => {
+                  const newRelations = [...relations];
+                  newRelations[index].selected = !newRelations[index].selected;
+                  setRelations(newRelations);
+                }}
+              >
+                <div
+                  className={`mr-2 w-4 h-4 rounded-full ${
+                    relation.selected ? "bg-blue-500" : "bg-gray-300"
+                  }`}
+                />
+                <p className="text-gray-700 text-xs">{relation.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="mb-4" ref={holderRef} />
+    </div>
+  );
 }
+
+const filterList = (list, setList) => {
+  return (
+    <div className="">
+      {list.map((item, index) => (
+        <div key={index} className="flex flex-col">
+          <div
+            className="flex items-center hover:bg-gray-100  px-2 py-1 rounded hover:cursor-pointer select-none"
+            onClick={() => {
+              const newList = [...list];
+              newList[index].selected = !newList[index].selected;
+              setList(newList);
+            }}
+          >
+            <div
+              className={`mr-2 w-4 h-4 rounded-full ${
+                item.selected ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            />
+            <p className="text-gray-700 text-xs">{item.value}</p>
+          </div>
+          <div className="h-[2px] w-full bg-gray-300"></div>
+        </div>
+      ))}
+    </div>
+  );
+};
