@@ -1,7 +1,8 @@
 //@ts-nocheck
 import * as d3 from "d3";
 import React, { useEffect, useState, useRef } from "react";
-import myData from "@/data/HierarchicalEdgeBundlingL3V2.json";
+import myData from "@/data/HierarchicalEdgeBundlingL3V6.json";
+import legend from "@/app/Legend.jpg";
 
 const colornone = "#ccc";
 const colorout = "#f00";
@@ -14,11 +15,22 @@ function buildHierarchy(data, delimiter = ".") {
   };
 
   for (const record of data) {
-    const { name, size, linkTo } = record;
-    const parts = name.split(delimiter);
-    const l0 = parts[1];
-    const l1 = parts[2];
-    const l2 = parts[3];
+    const {
+      name,
+      size,
+      linkTo,
+      linkFrom,
+      linkToDocuments,
+      linkFromDocuments,
+      relations,
+      L0,
+      L1,
+      L2,
+      documents,
+    } = record;
+    const l0 = L0;
+    const l1 = L1;
+    const l2 = L2;
 
     //try to add l0
     let level0 = root.children.find((c) => c.name === l0);
@@ -52,6 +64,14 @@ function buildHierarchy(data, delimiter = ".") {
         name: l2,
         size,
         linkTo,
+        linkFrom,
+        linkFromDocuments,
+        linkToDocuments,
+        L0,
+        L1,
+        L2,
+        relations,
+        documents,
       };
       root.children
         .find((c) => c.name === l0)
@@ -59,6 +79,8 @@ function buildHierarchy(data, delimiter = ".") {
         .children.push(newItem);
     }
   }
+
+  console.log("root", root);
   return root;
 }
 
@@ -111,13 +133,23 @@ const chart = (inputData: any) => {
     .each(function (d) {
       d.text = this;
     })
-    .call((text) =>
-      text.append("title").text(
-        (d) => `${id(d)}
-${d.outgoing.length} outgoing
-${d.incoming.length} incoming`
-      )
-    );
+    .call((text) => {
+      return text.append("title").text((d) => {
+        console.log("d", d);
+
+        return `
+          ${d.data.name} \n
+          ${d.data.relations.join(", ")} \n
+          contain ${d.data.documents.length} documents \n
+          ${
+            d.data.linkFromDocuments.length
+          } links to documents in this category  \n
+          ${
+            d.data.linkToDocuments.length
+          } links from this category to \n\t documents in another category \n
+          `;
+      });
+    });
 
   const line = d3
     .lineRadial()
@@ -327,7 +359,7 @@ export default function HierarchicalEdgeBundlingL3() {
 
   return (
     <div className="flex items-start">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 w-6/12 px-4 max-h-[80vh] overflow-y-scroll">
         <div className="flex flex-col">
           <div className="flex items-center mb-4">
             <button
@@ -338,7 +370,7 @@ export default function HierarchicalEdgeBundlingL3() {
               }`}
               onClick={() => setFilterType(0)}
             >
-              L0
+              L1
             </button>
             <button
               className={`mr-2 px-4 py-2 ${
@@ -348,7 +380,7 @@ export default function HierarchicalEdgeBundlingL3() {
               }`}
               onClick={() => setFilterType(1)}
             >
-              L1
+              L2
             </button>
             <button
               className={`mr-2 px-4 py-2 ${
@@ -358,7 +390,7 @@ export default function HierarchicalEdgeBundlingL3() {
               }`}
               onClick={() => setFilterType(2)}
             >
-              L2
+              L3
             </button>
           </div>
           <div>
@@ -416,7 +448,12 @@ export default function HierarchicalEdgeBundlingL3() {
           </div>
         </div>
       </div>
-      <div className="mb-4" ref={holderRef} />
+      <div className="flex flex-col items-end">
+        <div className="top-12 relative bg-red-50">
+          <img src={legend.src} alt="" className="w-56" />
+        </div>
+        <div className="mb-4" ref={holderRef} />
+      </div>
     </div>
   );
 }

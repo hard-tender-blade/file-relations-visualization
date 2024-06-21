@@ -9,20 +9,12 @@ import TidyTree from "./components/charts/tidyTree";
 export default function Home() {
   return (
     <div className="w-full flex flex-col">
-      <ChartWrapper title="Hierarchical edge bundling L3">
-        <HierarchicalEdgeBundlingL3 />
-      </ChartWrapper>
-
-      <ChartWrapper title="Hierarchical edge bundling L2">
-        <HierarchicalEdgeBundlingL2 />
-      </ChartWrapper>
-
-      <ChartWrapper title="Hierarchical edge bundling L1">
-        <HierarchicalEdgeBundlingL1 />
-      </ChartWrapper>
-
       <ChartWrapper title="Tidy tree">
         <TidyTree />
+      </ChartWrapper>
+
+      <ChartWrapper title="Hierarchical edge bundling L3">
+        <HierarchicalEdgeBundlingL3 />
       </ChartWrapper>
     </div>
   );
